@@ -1,5 +1,19 @@
 # Sift.js
 
+Sift.js is a UI component for filters. It offers 4 types of filters:
+
+1. Multiple choice :ballot_box_with_check:  *(List of checkboxes)*
+2. Single choice :radio_button: *(List of radio buttons)*
+3. Date :calendar: *(Single month calendar)*
+4. Date range :calendar: :calendar: *(Multi-month calendar)*
+
+Some other benefits:
+
+- Clean API: Complexities hidden away.
+- Blackbox: Only 2 callbacks regardless of filter type!
+- Modular: Utilizes stand-alone components.
+- Object-Orientated: Pragmatic example of OOP in JavaScript - no more `Cat extends Animal` :smiley_cat:
+
 ##### Getting Started
 
 - [Demo](#demo)
@@ -24,7 +38,8 @@
 
 ##### Callbacks
 
-- [onDateRangeSelected](#ondaterangeselected)
+- [onFilterApplied](#onfilterapplied)
+- [onFilterCleared](#onfiltercleared)
 
 ##### Markup
 
