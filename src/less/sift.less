@@ -1,0 +1,172 @@
+@siftFontFamily: Arial, Helvetica, sans-serif;
+@siftFontSize: 14px;
+@siftHeight: 30px;
+@siftDropdownWidth: 150px;
+@siftDropdownHeight: 180px;
+@siftLabelHeight: 30px;
+@siftLinkBg: rgba(247,247,247,1);
+@siftLinkColour: rgb(119,121,125);
+@siftBorder: 1px solid rgba(175,178,185,1);
+@siftFormShadow: 0 4px 5px 0 rgba(134,130,130,.3);
+@siftBlue: rgba(51,166,231,1);
+@siftLabelHoverBg: rgba(175,178,185,.25);
+
+// ************************************************************
+// Scaffolding
+// ************************************************************
+
+.sift-container {
+  float: left;
+  position: relative;
+
+  .sift-link {
+    float: left;
+    height: @siftHeight;
+  }
+
+  .sift-filter-name {
+    float: left;
+  }
+
+  .sift-active-filter-text {
+    float: left;
+    max-width: 150px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+  }
+
+  .sift-dropdown {
+    display: none;
+    position: absolute;
+    z-index: 2;
+    top: @siftHeight - 1;
+    min-width: @siftDropdownWidth;
+    max-height: @siftDropdownHeight;
+    overflow: auto;
+  }
+
+  .sift-clear {
+    display: none;
+  }
+
+  .sift-dropdown-inner {
+    label {
+      float: left;
+      width: 100%;
+      height: @siftLabelHeight;
+    }
+  }
+
+  &.filters-showing {
+    .sift-dropdown {
+      display: block;
+    }
+  }
+
+  &.with-active-filter {
+    .sift-clear {
+      display: block;
+    }
+  }
+
+  &.with-multi-calendar {
+    .sift-dropdown-inner {
+      width: 350px;
+    }
+  }
+
+  &.without-scroll {
+    .sift-dropdown {
+      max-height: initial;
+      overflow: visible;
+    }
+  }
+}
+
+// ************************************************************
+// Overrides
+// ************************************************************
+
+.sift-container {
+  form {
+    margin-bottom: 0;
+  }
+
+  a {
+    text-decoration: none;
+  }
+}
+
+
+// ************************************************************
+// UI
+// ************************************************************
+
+.sift-container {
+  font-family: @siftFontFamily;
+  font-size: @siftFontSize;
+  font-weight: normal;
+
+  .sift-link {
+    box-sizing: border-box;
+    line-height: 28px;
+    background: @siftLinkBg;
+    border: @siftBorder;
+    color: @siftLinkColour;
+
+    &:hover {
+      background: darken(@siftLinkBg, 3%);
+    }
+  }
+
+  .sift-filter-name {
+    padding-left: 8px;
+  }
+
+  .sift-active-filter-text {
+    font-style: italic;
+    padding-right: 8px;
+  }
+
+  .sift-dropdown {
+    background: white;
+    border: @siftBorder;
+    box-shadow: @siftFormShadow;
+  }
+
+  .sift-clear {
+    color: @siftBlue;
+  }
+
+  .sift-dropdown-inner {
+    label {
+      padding: 6px 8px;
+      box-sizing: border-box;
+
+      &:hover {
+        cursor: pointer;
+        background: @siftLabelHoverBg;
+      }
+    }
+
+    .dj-container, .dr-container {
+      border: none;
+    }
+  }
+
+  &.filters-showing {
+    .sift-link {
+      border-color: @siftBlue;
+    }
+  }
+
+  &.with-active-filter {
+    .sift-active-filter-text {
+      padding-left: 4px;
+    }
+    .sift-clear {
+      padding: 4px 8px;
+    }
+  }
+}
