@@ -109,6 +109,7 @@ $ grunt watch
 ## Configuration
 
 ### type
+*TODO: change types to multiple, single, date, date_range*
 
 - **Details** Type of filter. Available options are: `checkbox`, `radio`, `calendar`, `multi_calender`.
 - **Required** Yes
@@ -152,10 +153,72 @@ $ grunt watch
 
 ### activeFilter
 
-- **Details** Select an existing filter by value.
+- **Details** Select existing filter/s by value.
 - **Required** No
-- **Type** Has to match type of value attribute.
-- **Usage** `activeFilter: "Name"<String>` or `activeFilter: 1<Number>`
+- **Type** `<String>` or `<Number>` or `Array <String>` or `Array <Number>`
+- **Usage:**
+
+  Example data when value type is `<String>`:
+
+  ```
+  filters: [
+    {
+      "value": "asto",
+      "displayName": "Aston Martin"
+    },
+    {
+      "value": "lamb",
+      "displayName": "Lamborghini"
+    },
+    {
+      "value": "pors",
+      "displayName": "Porsche"
+    }
+  ]
+  ```
+
+  To select a **single filter**:
+
+  ```
+  activeFilter: "asto"
+  ```
+
+  When list type is "checkbox" you can select **multiple filters**:
+
+  ```
+  activeFilter: ["asto", "pors"]
+  ```
+
+  Example data when value type is `<Number>`:
+
+  ```
+  filters: [
+    {
+      "value": 1,
+      "displayName": "Petrol"
+    },
+    {
+      "value": 2,
+      "displayName": "Diesel"
+    },
+    {
+      "value": 3,
+      "displayName": "Electric"
+    }
+  ]
+  ```
+
+  To select a **single filter**:
+
+  ```
+  activeFilter: 3
+  ```
+
+  When list type is "checkbox" you can select **multiple filters**:
+
+  ```
+  activeFilter: [1, 2]
+  ```
 
 ## Calendar Configuration
 *Additional configuration options when type is either "calendar" or "multi_calendar"*
