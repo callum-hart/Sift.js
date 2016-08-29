@@ -9,7 +9,7 @@ Sift.js is a UI component for filters. It offers 4 types of filters:
 |:calendar: Date|Single month datepicker|*Made:* **on**  20th Aug 2016|
 |:calendar: :calendar: Date range|Multi-month datepicker|*Made:* **between** 1st Jan 2015 - 25th Dec 2015|
 
-Some other benefits:
+Some benefits:
 
 - Clean API: Complexities hidden away.
 - Blackbox: Only 2 callbacks regardless of filter type!
