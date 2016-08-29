@@ -47,6 +47,10 @@ Some other benefits:
 
 - [Generated HTML](#generated-html)
 - [Conditional CSS Classes](#conditional-css-classes)
+  - [filters-showing](#filtersshowing)
+  - [with-active-filter](#withactivefilter)
+  - [without-scroll](#withoutscroll)
+  - [with-multi-calendar](#withmulticalendar)
 
 ## Getting Started
 
@@ -183,7 +187,7 @@ $ grunt watch
   activeFilter: "asto"
   ```
 
-  When list type is "checkbox" you can select **multiple filters**:
+  When list type is "checkbox" to select **multiple filters**:
 
   ```
   activeFilter: ["asto", "pors"]
@@ -214,7 +218,7 @@ $ grunt watch
   activeFilter: 3
   ```
 
-  When list type is "checkbox" you can select **multiple filters**:
+  When list type is "checkbox" to select **multiple filters**:
 
   ```
   activeFilter: [1, 2]
@@ -230,7 +234,7 @@ $ grunt watch
 - **Type** `<Object>`
 - **Usage:**
 
-  When type is "calendar" calendarOptions supports all of the configuration options [DateJust.js]() has:
+  When type is "calendar" calendarOptions supports all of the configuration options [DateJust.js](https://github.com/callum-hart/DateJust.js#configuration-1) has:
 
   ```
   calendarOptions: {
@@ -238,7 +242,7 @@ $ grunt watch
   }
   ```
 
-  When type is "multi_calendar" calendarOptions supports all of the configuration options [DateRange.js]() has:
+  When type is "multi_calendar" calendarOptions supports all of the configuration options [DateRange.js](https://github.com/callum-hart/DateRange.js#configuration-1) has:
 
   ```
   calendarOptions: {
