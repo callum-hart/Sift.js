@@ -103,7 +103,6 @@ class CommonFilter
     @showFilters()
 
   closeFilters: (e) =>
-    # TODO: replace dependency on jQuery - if click happened outside the filter hide filters
     if $(e.target).parents(".sift-container").length < 1
       @hideFilters()
       @unbindEvents()
@@ -402,7 +401,7 @@ class CalendarFilter extends CommonFilter
 ************************************************************
 ###
 
-window.Sift = Sift # Temp way of making lib public
+window.Sift = Sift
 
 Utils =
   extend: (target, objects...) ->
