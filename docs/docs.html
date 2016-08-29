@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sift.js Demo</title>
+  <link href="../vendor/css/date-just.min.css" rel="stylesheet">
+  <link href="../vendor/css/date-range.min.css" rel="stylesheet">
+  <link href="../lib/css/sift.min.css" rel="stylesheet">
+  <link href="dist/css/docs.css" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,900italic,900,700italic,700,600italic,600,400italic' rel='stylesheet' type='text/css'>
+</head>
+<body>
+  <section>
+    <div id="title">
+      <h1>Sift.js</h1>
+    </div>
+    <p>
+      Sift.js is a UI component for filters. You can filter by <span class="light-text">(a)</span> multiple choice, <span class="light-text">(b)</span> single choice, <span class="light-text">(c)</span> date and <span class="light-text">(d)</span> date range.
+    </p>
+    <ul>
+      <li>
+        <span class="light-text">(a)</span> <i class="light-text">Show me:</i> Aston Martins <strong>and</strong> Porsches
+      </li>
+      <li>
+        <span class="light-text">(b)</span> <i class="light-text">Show me either:</i> Aston Martins <strong>or</strong> Porsches
+      </li>
+      <li>
+        <span class="light-text">(c)</span> <i class="light-text">Made:</i> <strong>on</strong> 20th Aug 2016
+      </li>
+      <li>
+        <span class="light-text">(d)</span> <i class="light-text">Made:</i> <strong>between</strong> 1st Jan 2015 - 25th Dec 2015
+      </li>
+    </ul>
+    <p>
+      The <strong>library</strong> can be found on <a href="https://github.com/callum-hart/Sift.js">GitHub</a> as can the <a href="https://github.com/callum-hart/Sift.js/blob/master/README.md">documentation.</a>
+    </p>
+    <p>
+      And some <strong>examples</strong> can be seen below.
+    </p>
+    <p>
+      <i>Big thanks to <a href="https://www.commusoft.co.uk/">CommuSoft</a> where I built version 0.1.0</i>
+    </p>
+  </section>
+
+  <div class="example" id="first-example">
+    <h2>Example #1</h2>
+    <div class="box">
+      <span class="box-label">Result</span>
+      <div id="example-one"></div>
+    </div>
+
+    <div class="box dark">
+      <a href="" class="box-label">
+        HTML
+      </a>
+<pre>
+<code>
+&lt;div id="example-one"&gt;&lt;/div&gt;
+</code>
+</pre>
+    </div>
+
+    <div class="box dark">
+      <span class="box-label">Data</span>
+<pre>
+<code>
+var cars = [
+  {
+    "value": "asto",
+    "displayName": "Aston Martin"
+  },
+  {
+    "value": "lamb",
+    "displayName": "Lamborghini"
+  },
+  {
+    "value": "pors",
+    "displayName": "Porsche"
+  }
+];
+</code>
+</pre>
+      </div>
+
+    <div class="box dark">
+      <a href="" class="box-label">
+        JS
+      </a>
+<pre>
+<code>
+exampleOne = new Sift("#example-one", {
+  displayName: "Car manufacturers",
+  type: "checkbox",
+  filters: cars,
+  activeFilter: ["asto", "pors"],
+  onFilterApplied: function(activeFilter) {
+    console.log("Car manufacturers: " + activeFilter);
+  }
+});
+</code>
+</pre>
+      </div>
+  </div>
+
+  <div class="example" id="second-example">
+    <h2>Example #2</h2>
+    <div class="box">
+      <span class="box-label">Result</span>
+      <div id="example-two"></div>
+    </div>
+
+    <div class="box dark">
+      <a href="" class="box-label">
+        HTML
+      </a>
+<pre>
+<code>
+&lt;div id="example-two"&gt;&lt;/div&gt;
+</code>
+</pre>
+    </div>
+
+    <div class="box dark">
+      <span class="box-label">Data</span>
+<pre>
+<code>
+var cars = [...]; // Same as Example #1
+</code>
+</pre>
+      </div>
+
+    <div class="box dark">
+      <a href="" class="box-label">
+        JS
+      </a>
+<pre>
+<code>
+exampleTwo = new Sift("#example-two", {
+  displayName: "Car manufacturer",
+  type: "radio",
+  filters: cars,
+  activeFilter: "asto",
+  onFilterApplied: function(activeFilter) {
+    console.log("Car manufacturer: " + activeFilter);
+  }
+});
+</code>
+</pre>
+      </div>
+  </div>
+
+  <div class="example" id="third-example">
+    <h2>Example #3</h2>
+    <div class="box">
+      <span class="box-label">Result</span>
+      <div id="example-three"></div>
+    </div>
+
+    <div class="box dark">
+      <a href="" class="box-label">
+        HTML
+      </a>
+<pre>
+<code>
+&lt;div id="example-three"&gt;&lt;/div&gt;
+</code>
+</pre>
+    </div>
+
+    <div class="box dark">
+      <a href="" class="box-label">
+        JS
+      </a>
+<pre>
+<code>
+exampleThree = new Sift("#example-three", {
+  type: "calendar",
+  displayName: "Made on",
+  calendarOptions: {
+    minDate: new Date(2015, 7, 20),
+    maxDate: new Date(2017, 7, 20),
+    existingDate: new Date(2016, 7, 20),
+    dragSelection: false
+  },
+  onFilterApplied: function(singleDate) {
+    console.log("Made on: " + singleDate);
+  }
+});
+</code>
+</pre>
+      </div>
+  </div>
+
+  <div class="example" id="fourth-example">
+    <h2>Example #4</h2>
+    <div class="box">
+      <span class="box-label">Result</span>
+      <!-- This calendar allows you to select a single date or date range (within the same month) -->
+      <div id="example-four"></div>
+    </div>
+
+    <div class="box dark">
+      <a href="" class="box-label">
+        HTML
+      </a>
+<pre>
+<code>
+&lt;!-- This calendar allows you to select a single date
+or date range (within the same month) --&gt;
+
+&lt;div id="example-four"&gt;&lt;/div&gt;
+</code>
+</pre>
+    </div>
+
+    <div class="box dark">
+      <a href="" class="box-label">
+        JS
+      </a>
+<pre>
+<code>
+exampleFour = new Sift("#example-four", {
+  type: "calendar",
+  displayName: "Made",
+  calendarOptions: {
+    existingDateRange: [new Date(2015, 0, 1), new Date(2015, 0, 10)]
+  },
+  onFilterApplied: function(startDate, endDate) {
+    if(endDate) {
+      console.log("Made between: " + startDate + " – " + endDate);
+    }else {
+      console.log("Made on: " + startDate);
+    }
+  }
+});
+</code>
+</pre>
+      </div>
+  </div>
+
+  <div class="example" id="fifth-example">
+    <h2>Example #5</h2>
+    <div class="box">
+      <span class="box-label">Result</span>
+      <div id="example-five"></div>
+    </div>
+
+    <div class="box dark">
+      <a href="" class="box-label">
+        HTML
+      </a>
+<pre>
+<code>
+&lt;div id="example-five"&gt;&lt;/div&gt;
+</code>
+</pre>
+    </div>
+
+    <div class="box dark">
+      <a href="" class="box-label">
+        JS
+      </a>
+<pre>
+<code>
+exampleFive = new Sift("#example-five", {
+  type: "multi_calendar",
+  displayName: "Made between",
+  calendarOptions: {
+    existingDateRange: [new Date(2015, 0, 1), new Date(2015, 11, 25)]
+  },
+  onFilterApplied: function(startDate, endDate) {
+    console.log("Made between: " + startDate + " – " + endDate);
+  }
+});
+</code>
+</pre>
+      </div>
+  </div>
+
+  <section>
+    <p>
+      P.S. Sift.js internally uses 2 other open source libraries I've built. Both can
+      be used as stand-alone components – and found on GitHub:
+    </p>
+    <ul>
+      <li>
+        <a href="https://github.com/callum-hart/DateJust.js">DateJust.js</a>
+        <span class="light-text">– Datepicker with powerful controls (drag &amp; scroll)</span>
+      </li>
+      <li>
+        <a href="https://github.com/callum-hart/DateRange.js">DateRange.js</a>
+        <span class="light-text">– Multi-month datepicker</span>
+      </li>
+    </ul>
+  </section>
+
+  <footer>
+    <small>See more at <a href="http://www.callumhart.com">callumhart.com</a></small>
+  </footer>
+
+  <script type="text/javascript" src="../vendor/js/date-just.min.js"></script>
+  <script type="text/javascript" src="../vendor/js/date-range.min.js"></script>
+  <!-- Currently Sift depends on jQuery -->
+  <script type="text/javascript" src="../vendor/js/jquery-3.1.0.min.js"></script>
+  <script type="text/javascript" src="../lib/js/sift.min.js"></script>
+  <script type="text/javascript" src="dist/js/docs.js"></script>
+</body>
+</html>
