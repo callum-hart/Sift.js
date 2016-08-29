@@ -2,14 +2,30 @@ cars = [
   {
     "value": "asto",
     "displayName": "Aston Martin"
-  },
+  }
   {
     "value": "lamb",
     "displayName": "Lamborghini"
-  },
+  }
   {
     "value": "pors",
     "displayName": "Porsche"
+  }
+  {
+    "value": "mcla",
+    "displayName": "McLaren"
+  }
+  {
+    "value": "ferr",
+    "displayName": "Ferrari"
+  }
+  {
+    "value": "bron",
+    "displayName": "Bugatti Veyron"
+  }
+  {
+    "value": "koen",
+    "displayName": "Koenigsegg"
   }
 ]
 

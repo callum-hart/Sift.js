@@ -19,8 +19,8 @@ Some other benefits:
 ##### Getting Started
 
 - [Demo](#demo)
-- [Supported Browsers](#supported-browsers)
 - [Dependencies](#dependencies)
+- [Supported Browsers](#supported-browsers)
 - [To Use](#to-use)
 - [To Run](#to-run)
 
@@ -58,13 +58,6 @@ Some other benefits:
 
 A demo of the library in action can be [found here](http://www.callumhart.com/open-source/sift).
 
-### Supported Browsers
-
-- Chrome :white_check_mark:
-- Opera :white_check_mark:
-- Firefox :white_check_mark:
-- ~~Safari~~ known issues (inherited from DateJust.js)
-
 ### Dependencies
 
 DateRange.js has **3 dependencies:**
@@ -72,6 +65,13 @@ DateRange.js has **3 dependencies:**
 1. [jQuery](https://jquery.com/) *Not for long* :laughing:
 2. [DateJust.js](https://github.com/callum-hart/DateJust.js)
 3. [DateRange.js](https://github.com/callum-hart/DateRange.js)
+
+### Supported Browsers
+
+- Chrome :white_check_mark:
+- Opera :white_check_mark:
+- Firefox :white_check_mark:
+- ~~Safari~~ known issues (inherited from DateJust.js)
 
 ### To Use
 
