@@ -56,7 +56,7 @@ Some other benefits:
 
 ### Demo
 
-A demo of the library in action can be [found here](http://www.callumhart.com/open-source/sift).
+A demo of the library in action can be [found here](http://www.callumhart.com/open-source/sift#first-example).
 
 ### Dependencies
 
