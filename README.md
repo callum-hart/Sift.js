@@ -4,10 +4,10 @@ Sift.js is a UI component for filters. It offers 4 types of filters:
 
 |**Filter type**|**Description**|**Later referred to as**|
 | :--- | :--- |:--- |
-|Multiple choice :ballot_box_with_check:|List of checkboxes|"checkbox"|
-|Single choice :radio_button:|List of radio buttons|"radio"|
-|Date :calendar:|Single month datepicker|"calendar"|
-|Date range :calendar: :calendar:|Multi-month datepicker|"multi_calender"|
+|:ballot_box_with_check: Multiple choice|List of checkboxes|"checkbox"|
+|:radio_button: Single choice|List of radio buttons|"radio"|
+|:calendar: Date|Single month datepicker|"calendar"|
+|:calendar: :calendar: Date range|Multi-month datepicker|"multi_calender"|
 
 Some other benefits:
 
@@ -47,10 +47,10 @@ Some other benefits:
 
 - [Generated HTML](#generated-html)
 - [Conditional CSS Classes](#conditional-css-classes)
-  - [filters-showing](#filtersshowing)
-  - [with-active-filter](#withactivefilter)
-  - [without-scroll](#withoutscroll)
-  - [with-multi-calendar](#withmulticalendar)
+  - [filters-showing](#filters-showing)
+  - [with-active-filter](#with-active-filter)
+  - [without-scroll](#without-scroll)
+  - [with-multi-calendar](#with-multi-calendar)
 
 ## Getting Started
 
